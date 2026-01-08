@@ -3,7 +3,7 @@ import { Employee, EmployeeFormData } from '../../types/employee';
 import { Input } from '../common/Input';
 import { Select } from '../common/Select';
 import { Button } from '../common/Button';
-import { validateEmployeeForm, isValidImageFile } from '../../utils/validation';
+import { validateEmployeeForm, isValidImageFile, ValidationErrors } from '../../utils/validation';
 import { INDIAN_STATES } from '../../utils/mockData';
 import { Upload, X } from 'lucide-react';
 
@@ -29,7 +29,7 @@ export const EmployeeForm = ({ employee, onSuccess, onCancel, employeeHook }: Em
     isActive: true,
   });
 
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<ValidationErrors>({});
   const [imagePreview, setImagePreview] = useState<string>('');
   const [imageError, setImageError] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState(false);
