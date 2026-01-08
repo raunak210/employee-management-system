@@ -1,10 +1,11 @@
 export interface ValidationErrors {
-    fullName?: string;
-    gender?: string;
-    dateOfBirth?: string;
-    state?: string;
-    profileImage?: string;
-  }
+  fullName?: string;
+  gender?: string;
+  dateOfBirth?: string;
+  state?: string;
+  profileImage?: string;
+  [key: string]: string | undefined;
+}
   
   export const validateEmployeeForm = (data: {
     fullName: string;
